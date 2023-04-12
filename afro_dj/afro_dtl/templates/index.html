@@ -3,24 +3,41 @@ here we're going to deploy variables
 css(in_styling)
 -->
 
-{% comment %} 
-
-{% endcomment %}
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% comment %} {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{p_title}}</title>
-    <link rel-"stylesheet" href_"">
+    <link rel="stylesheet" href="{% static 'css/dtl.css'%}" />
     <script></script>
-</head>
-<body>
-   <header></header>
-   {% if p_title %} 
-   <h1> Welcome to the{{p_title}}</h1>
-   {% endif %}
-   <footer></footer>
-</body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li id='logo'>{{pr_title}}</li>
+          <li class="navlink">Home</li>
+          <li class="navlink">About</li>
+        </ul>
+      </nav>
+    </header>
+    
+    <h1>{{username}} Welcome to the{{p_title}}.</h1>
+{%if gender %}
+    <p> Greetings Sir</p>
+{% else %}
+    <p> your gender was not captured</p>
+{% endif %}
+
+{% if username == 'Nich' %}
+    <p> Hi Nich</p>
+{% elif username == 'Mariam' %}
+    <p> Hi Mariam</p>
+{% endif %}
+    
+    <footer></footer>
+  </body>
 </html>

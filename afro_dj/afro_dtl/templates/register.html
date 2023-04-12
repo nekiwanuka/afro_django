@@ -1,0 +1,44 @@
+<!--
+here we're going to deploy variables
+css(in_styling)
+-->
+
+{% comment %} {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{p_title}}</title>
+    <link rel="stylesheet" href="{% static 'css/dtl.css'%}" />
+    <script></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li id ='logo'>{{ p_title }}</li>
+        
+          {% if user.is_authenticated %}
+            <li class="navlink">{{user.name}}</li>
+          {% else %} 
+            <li class="navlink">login</li>
+            <li class="navlink">Register</li>
+          {% endif %}
+          <li class="navlink">Home</li>
+          <li class="navlink">About</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="regdiv">
+        <form action= '' id = 'reg_div'>
+            <input type="text" name="username" placeholder="Username" />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password"/>
+            <input type="confirm passowrd" required"password"/>
+            <input type="submit">
+        </form>  
+    <footer></footer>
+  </body>
+</html>

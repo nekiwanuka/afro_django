@@ -18,7 +18,14 @@ css(in_styling)
     <header>
       <nav>
         <ul>
-          <li id='logo'>{{pr_title}}</li>
+          <li id ='logo'>{{ p_title }}</li>
+        
+          {% if user.is_authenticated %}
+            <li class="navlink">{{user.name}}</li>
+          {% else %} 
+            <li class="navlink">login</li>
+            <li class="navlink">Register</li>
+          {% endif %}
           <li class="navlink">Home</li>
           <li class="navlink">About</li>
         </ul>
